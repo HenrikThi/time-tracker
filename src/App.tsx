@@ -7,6 +7,11 @@ import {
   TableCell,
   TableHead,
   TableRow,
+  Typography,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
 } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
@@ -39,6 +44,7 @@ export default function App() {
       setLogEntries(entries);
       const total = computation.calculateTotalWork(entries);
       setTotalWorked(computation.formatDuration(total));
+      console.log(totalWorked);
 
       const overtime = computation.calculateOvertime(entries);
       setOvertime(computation.formatDuration(overtime));
@@ -69,7 +75,14 @@ export default function App() {
           onChange={handleFileUpload}
         />
       </Fab>
-      <h1>Overtime: {overtime}</h1>
+      <div style={{margin: 8}}>
+      <Typography variant="h5" component="div">
+        Overtime: {overtime}
+      </Typography>
+      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        Total Time: {totalWorked}
+      </Typography>
+      </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
