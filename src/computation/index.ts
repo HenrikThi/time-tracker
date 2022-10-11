@@ -97,7 +97,7 @@ export default class ComputationService {
       Juli: "07",
       Aug: "08",
       Sept: "09",
-      Oct: "10",
+      Okt: "10",
       Nov: "11",
       Dez: "12",
     };
